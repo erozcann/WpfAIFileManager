@@ -10,8 +10,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
+using WpfAIFileManager.Models;
 
-namespace WpfAIFileManager
+namespace WpfAIFileManager.Protocol
 {
     public class SemanticProcessor
     {
@@ -100,14 +101,14 @@ GENEL KURALLAR:
                             // AI JSON vermedi, tekrar dene
                             var retryPrompt = "SADECE JSON VER. Başka hiçbir şey yazma. Komut: " + input;
                             chat.AddUserMessage(retryPrompt);
-                            
+
                             var retryResult = await _chatService.GetChatMessageContentAsync(chat);
                             if (retryResult is ChatMessageContent retryMessage)
                             {
                                 content = retryMessage.Content?.Trim();
                                 jsonStart = content.IndexOf('{');
                                 jsonEnd = content.LastIndexOf('}');
-                                
+
                                 if (jsonStart == -1 || jsonEnd == -1 || jsonEnd <= jsonStart)
                                     throw new Exception("AI JSON yanıtı vermedi:\n\n" + content);
                             }
@@ -229,5 +230,5 @@ GENEL KURALLAR:
 
     }
 }
-    
+
 #pragma warning restore SKEXP0010

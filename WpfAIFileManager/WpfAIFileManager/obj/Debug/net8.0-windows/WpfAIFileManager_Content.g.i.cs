@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("semanticfunctions/filecommand_function.json")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("semanticfunctions/skprompt.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("protocol/semanticfunctions/filecommand_function.json")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("protocol/semanticfunctions/skprompt.txt")]
 
 

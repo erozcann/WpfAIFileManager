@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace WpfAIFileManager
+namespace WpfAIFileManager.Services
 {
     public static class FileListerService
     {
@@ -51,10 +51,10 @@ namespace WpfAIFileManager
                 var fileName = Path.GetFileName(file);
                 var fileInfo = new FileInfo(file);
                 var size = fileInfo.Length;
-                var sizeText = size < 1024 ? $"{size} B" : 
-                              size < 1024 * 1024 ? $"{size / 1024:F1} KB" : 
+                var sizeText = size < 1024 ? $"{size} B" :
+                              size < 1024 * 1024 ? $"{size / 1024:F1} KB" :
                               $"{size / (1024 * 1024):F1} MB";
-                
+
                 result.Add($"[DOSYA] {fileName} ({sizeText})");
             }
 

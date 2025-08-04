@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace WpfAIFileManager
+namespace WpfAIFileManager.Models
 {
     public class SemanticCommandResult
     {

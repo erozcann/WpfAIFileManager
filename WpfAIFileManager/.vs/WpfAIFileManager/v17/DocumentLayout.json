@@ -3,60 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\filecreateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\filecreateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\wpfaifilemanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\wpfaifilemanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\filecopyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\filecopyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\protocol\\semanticfunctions\\filecommand_function.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\protocol\\semanticfunctions\\filecommand_function.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\semanticprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\semanticprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\services\\zipextractorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\services\\zipextractorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\semanticcommandresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\semanticcommandresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\protocol\\semanticprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\protocol\\semanticprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\zipextractorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\zipextractorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\models\\semanticcommandresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\models\\semanticcommandresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\filerenameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\filerenameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\services\\filelisterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\services\\filelisterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\filemoveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\filemoveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\services\\filecopyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\services\\filecopyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\filelisterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\filelisterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\services\\filemoveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\services\\filemoveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\filedeleteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\filedeleteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\services\\filedeleteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\services\\filedeleteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\semanticfunctions\\filecommand_function.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\semanticfunctions\\filecommand_function.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\services\\filecreateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\services\\filecreateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\semanticfunctions\\skprompt.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\semanticfunctions\\skprompt.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\context\\apppaths.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\context\\apppaths.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\apppaths.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\apppaths.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\services\\filerenameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\services\\filerenameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\protocol\\semanticfunctions\\skprompt.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\protocol\\semanticfunctions\\skprompt.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|c:\\users\\admin\\source\\repos\\wpfaifilemanager\\wpfaifilemanager\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{94BBCF4B-D808-44CD-BC00-553D5B66047F}|WpfAIFileManager\\WpfAIFileManager.csproj|solutionrelative:wpfaifilemanager\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,175 +70,200 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "WpfAIFileManager",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\WpfAIFileManager.csproj",
+              "RelativeDocumentMoniker": "WpfAIFileManager\\WpfAIFileManager.csproj",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\WpfAIFileManager.csproj",
+              "RelativeToolTip": "WpfAIFileManager\\WpfAIFileManager.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-04T11:51:45.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "SemanticCommandResult.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\SemanticCommandResult.cs",
-              "RelativeDocumentMoniker": "WpfAIFileManager\\SemanticCommandResult.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\SemanticCommandResult.cs",
-              "RelativeToolTip": "WpfAIFileManager\\SemanticCommandResult.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAwC0AAAAAAAAA",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Models\\SemanticCommandResult.cs",
+              "RelativeDocumentMoniker": "WpfAIFileManager\\Models\\SemanticCommandResult.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Models\\SemanticCommandResult.cs",
+              "RelativeToolTip": "WpfAIFileManager\\Models\\SemanticCommandResult.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAuwC0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T12:48:17.539Z"
+              "WhenOpened": "2025-08-01T12:48:17.539Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "SemanticProcessor.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\SemanticProcessor.cs",
-              "RelativeDocumentMoniker": "WpfAIFileManager\\SemanticProcessor.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\SemanticProcessor.cs",
-              "RelativeToolTip": "WpfAIFileManager\\SemanticProcessor.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAAOkAAAAAAAAA",
+              "Title": "ZipExtractorService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Services\\ZipExtractorService.cs",
+              "RelativeDocumentMoniker": "WpfAIFileManager\\Services\\ZipExtractorService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Services\\ZipExtractorService.cs",
+              "RelativeToolTip": "WpfAIFileManager\\Services\\ZipExtractorService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T09:21:59.646Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FileCopyService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\FileCopyService.cs",
-              "RelativeDocumentMoniker": "WpfAIFileManager\\FileCopyService.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\FileCopyService.cs",
-              "RelativeToolTip": "WpfAIFileManager\\FileCopyService.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAGsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T12:48:41.905Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FileCreateService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\FileCreateService.cs",
-              "RelativeDocumentMoniker": "WpfAIFileManager\\FileCreateService.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\FileCreateService.cs",
-              "RelativeToolTip": "WpfAIFileManager\\FileCreateService.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAwEEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T12:48:46.657Z"
+              "WhenOpened": "2025-08-03T06:26:59.122Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "WpfAIFileManager\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\MainWindow.xaml.cs",
-              "RelativeToolTip": "WpfAIFileManager\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAAwJYAAAAAAAAA",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Views\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WpfAIFileManager\\Views\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Views\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WpfAIFileManager\\Views\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAAwJkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-01T07:00:57.473Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ZipExtractorService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\ZipExtractorService.cs",
-              "RelativeDocumentMoniker": "WpfAIFileManager\\ZipExtractorService.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\ZipExtractorService.cs",
-              "RelativeToolTip": "WpfAIFileManager\\ZipExtractorService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAANAAAA",
+              "DocumentIndex": 4,
+              "Title": "SemanticProcessor.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Protocol\\SemanticProcessor.cs",
+              "RelativeDocumentMoniker": "WpfAIFileManager\\Protocol\\SemanticProcessor.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Protocol\\SemanticProcessor.cs",
+              "RelativeToolTip": "WpfAIFileManager\\Protocol\\SemanticProcessor.cs",
+              "ViewState": "AQIAAMwAAAAAAAAAAAAwwOoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T06:26:59.122Z"
+              "WhenOpened": "2025-08-01T09:21:59.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "fileCommand_function.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Protocol\\SemanticFunctions\\fileCommand_function.json",
+              "RelativeDocumentMoniker": "WpfAIFileManager\\Protocol\\SemanticFunctions\\fileCommand_function.json",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Protocol\\SemanticFunctions\\fileCommand_function.json",
+              "RelativeToolTip": "WpfAIFileManager\\Protocol\\SemanticFunctions\\fileCommand_function.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-03T06:27:29.185Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "FileRenameService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\FileRenameService.cs",
-              "RelativeDocumentMoniker": "WpfAIFileManager\\FileRenameService.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\FileRenameService.cs",
-              "RelativeToolTip": "WpfAIFileManager\\FileRenameService.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAAwCcAAAAAAAAA",
+              "Title": "FileListerService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Services\\FileListerService.cs",
+              "RelativeDocumentMoniker": "WpfAIFileManager\\Services\\FileListerService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Services\\FileListerService.cs",
+              "RelativeToolTip": "WpfAIFileManager\\Services\\FileListerService.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAuwEEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T12:49:11.162Z"
+              "WhenOpened": "2025-08-01T07:08:18.267Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "FileMoveService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\FileMoveService.cs",
-              "RelativeDocumentMoniker": "WpfAIFileManager\\FileMoveService.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\FileMoveService.cs",
-              "RelativeToolTip": "WpfAIFileManager\\FileMoveService.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAAwGkAAAAAAAAA",
+              "Title": "FileCopyService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Services\\FileCopyService.cs",
+              "RelativeDocumentMoniker": "WpfAIFileManager\\Services\\FileCopyService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Services\\FileCopyService.cs",
+              "RelativeToolTip": "WpfAIFileManager\\Services\\FileCopyService.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAuwGsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T11:58:02.961Z"
+              "WhenOpened": "2025-08-01T12:48:41.905Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "FileListerService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\FileListerService.cs",
-              "RelativeDocumentMoniker": "WpfAIFileManager\\FileListerService.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\FileListerService.cs",
-              "RelativeToolTip": "WpfAIFileManager\\FileListerService.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAwEEAAAAAAAAA",
+              "Title": "FileMoveService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Services\\FileMoveService.cs",
+              "RelativeDocumentMoniker": "WpfAIFileManager\\Services\\FileMoveService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Services\\FileMoveService.cs",
+              "RelativeToolTip": "WpfAIFileManager\\Services\\FileMoveService.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAwwGkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T07:08:18.267Z"
+              "WhenOpened": "2025-08-01T11:58:02.961Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "FileDeleteService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\FileDeleteService.cs",
-              "RelativeDocumentMoniker": "WpfAIFileManager\\FileDeleteService.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\FileDeleteService.cs",
-              "RelativeToolTip": "WpfAIFileManager\\FileDeleteService.cs",
-              "ViewState": "AQIAAFIAAAAAAAAAAAAAwHgAAAAAAAAA",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Services\\FileDeleteService.cs",
+              "RelativeDocumentMoniker": "WpfAIFileManager\\Services\\FileDeleteService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Services\\FileDeleteService.cs",
+              "RelativeToolTip": "WpfAIFileManager\\Services\\FileDeleteService.cs",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAAAGwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T07:18:14.26Z"
+              "WhenOpened": "2025-08-01T07:18:14.26Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "fileCommand_function.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\SemanticFunctions\\fileCommand_function.json",
-              "RelativeDocumentMoniker": "WpfAIFileManager\\SemanticFunctions\\fileCommand_function.json",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\SemanticFunctions\\fileCommand_function.json",
-              "RelativeToolTip": "WpfAIFileManager\\SemanticFunctions\\fileCommand_function.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-03T06:27:29.185Z"
+              "Title": "FileCreateService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Services\\FileCreateService.cs",
+              "RelativeDocumentMoniker": "WpfAIFileManager\\Services\\FileCreateService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Services\\FileCreateService.cs",
+              "RelativeToolTip": "WpfAIFileManager\\Services\\FileCreateService.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAiwEEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T12:48:46.657Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "AppPaths.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Context\\AppPaths.cs",
+              "RelativeDocumentMoniker": "WpfAIFileManager\\Context\\AppPaths.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Context\\AppPaths.cs",
+              "RelativeToolTip": "WpfAIFileManager\\Context\\AppPaths.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T07:50:15.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FileRenameService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Services\\FileRenameService.cs",
+              "RelativeDocumentMoniker": "WpfAIFileManager\\Services\\FileRenameService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Services\\FileRenameService.cs",
+              "RelativeToolTip": "WpfAIFileManager\\Services\\FileRenameService.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAwCcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T12:49:11.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "skprompt.txt",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\SemanticFunctions\\skprompt.txt",
-              "RelativeDocumentMoniker": "WpfAIFileManager\\SemanticFunctions\\skprompt.txt",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\SemanticFunctions\\skprompt.txt",
-              "RelativeToolTip": "WpfAIFileManager\\SemanticFunctions\\skprompt.txt",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Protocol\\SemanticFunctions\\skprompt.txt",
+              "RelativeDocumentMoniker": "WpfAIFileManager\\Protocol\\SemanticFunctions\\skprompt.txt",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Protocol\\SemanticFunctions\\skprompt.txt",
+              "RelativeToolTip": "WpfAIFileManager\\Protocol\\SemanticFunctions\\skprompt.txt",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2025-08-03T06:28:45.266Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AppPaths.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\AppPaths.cs",
-              "RelativeDocumentMoniker": "WpfAIFileManager\\AppPaths.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\AppPaths.cs",
-              "RelativeToolTip": "WpfAIFileManager\\AppPaths.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T07:50:15.107Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "WpfAIFileManager\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\MainWindow.xaml",
-              "RelativeToolTip": "WpfAIFileManager\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WpfAIFileManager\\Views\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfAIFileManager\\WpfAIFileManager\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "WpfAIFileManager\\Views\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-01T12:49:40.111Z"
+              "WhenOpened": "2025-08-01T12:49:40.111Z",
+              "EditorCaption": ""
             }
           ]
         }

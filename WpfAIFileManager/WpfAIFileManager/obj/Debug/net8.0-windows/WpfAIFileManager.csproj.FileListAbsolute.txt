@@ -9,8 +9,6 @@ C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\obj\Debug\net8.0-w
 C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\obj\Debug\net8.0-windows\WpfAIFileManager.AssemblyInfoInputs.cache
 C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\obj\Debug\net8.0-windows\WpfAIFileManager.AssemblyInfo.cs
 C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\obj\Debug\net8.0-windows\WpfAIFileManager.csproj.CoreCompileInputs.cache
-C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\bin\Debug\net8.0-windows\SemanticFunctions\fileCommand_function.json
-C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\bin\Debug\net8.0-windows\SemanticFunctions\skprompt.txt
 C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\bin\Debug\net8.0-windows\WpfAIFileManager.exe
 C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\bin\Debug\net8.0-windows\WpfAIFileManager.deps.json
 C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\bin\Debug\net8.0-windows\WpfAIFileManager.runtimeconfig.json
@@ -46,3 +44,5 @@ C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\obj\Debug\net8.0-w
 C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\obj\Debug\net8.0-windows\WpfAIFileManager.pdb
 C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\obj\Debug\net8.0-windows\WpfAIFileManager.genruntimeconfig.cache
 C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\obj\Debug\net8.0-windows\ref\WpfAIFileManager.dll
+C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\bin\Debug\net8.0-windows\Protocol\SemanticFunctions\fileCommand_function.json
+C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\bin\Debug\net8.0-windows\Protocol\SemanticFunctions\skprompt.txt

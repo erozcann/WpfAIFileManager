@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace WpfAIFileManager
+namespace WpfAIFileManager.Services
 {
     public static class FileRenameService
     {

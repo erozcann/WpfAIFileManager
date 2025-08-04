@@ -3,6 +3,9 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfAIFileManager.Context;
+using WpfAIFileManager.Protocol;
+using WpfAIFileManager.Services;
 
 namespace WpfAIFileManager
 {

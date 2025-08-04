@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 
-namespace WpfAIFileManager
+namespace WpfAIFileManager.Services
 {
     public static class FileDeleteService
     {
@@ -93,7 +93,7 @@ namespace WpfAIFileManager
             int count = 0;
 
             var errors = new List<string>();
-            
+
             foreach (var file in toDelete)
             {
                 try

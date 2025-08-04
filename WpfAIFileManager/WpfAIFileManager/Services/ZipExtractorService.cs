@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.IO.Compression;
 
-namespace WpfAIFileManager
+namespace WpfAIFileManager.Services
 {
     public class ZipExtractorService
     {

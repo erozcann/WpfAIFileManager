@@ -9,15 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="SemanticFunctions\fileCommand_function.json" />
-    <None Remove="SemanticFunctions\skprompt.txt" />
+    <None Remove="Protocol\SemanticFunctions\fileCommand_function.json" />
+    <None Remove="Protocol\SemanticFunctions\skprompt.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="SemanticFunctions\fileCommand_function.json">
+    <Content Include="Protocol\SemanticFunctions\fileCommand_function.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SemanticFunctions\skprompt.txt">
+    <Content Include="Protocol\SemanticFunctions\skprompt.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
