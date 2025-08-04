@@ -1,0 +1,182 @@
+print("✅ Python scripti başladı...")
+
+import cv2
+import fitz  # PyMuPDF
+import numpy as np
+import os
+import spacy
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+# OpenCV Yüz Tanıma Modelini Yükle
+face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+
+# NLP Modelini Yükle (BERT tabanlı model)
+nlp = spacy.load("en_core_web_trf")
+
+# 🔍 Genişletilmiş İlgi Alanı Kelime Havuzu
+CATEGORIES = {
+    "Artificial Intelligence": [
+        "machine learning", "deep learning", "neural networks", "natural language processing",
+        "computer vision", "reinforcement learning", "generative ai", "large language models",
+        "transformers", "autoencoders", "supervised learning", "unsupervised learning",
+        "clustering", "ai ethics", "explainable ai", "decision trees", "random forest",
+        "support vector machines", "bayesian networks", "gradient boosting"
+    ],
+    "Human-Computer Interaction": [
+        "brain-computer interface", "user experience", "usability testing", "haptic feedback",
+        "augmented reality", "virtual reality", "gesture recognition", "eye tracking",
+        "human-centered design", "adaptive interfaces", "voice interfaces", "multimodal interaction",
+        "emotion recognition", "wearable technology", "brain wave analysis"
+    ],
+    "Big Data & Analytics": [
+        "data mining", "data visualization", "big data", "hadoop", "spark", "stream processing",
+        "data warehousing", "time series analysis", "predictive analytics", "cloud data storage",
+        "etl pipelines", "real-time analytics", "graph databases", "data lakes", "kafka", "nosql"
+    ],
+    "Cybersecurity": [
+        "encryption", "network security", "firewalls", "digital forensics", "cyber attacks",
+        "malware analysis", "penetration testing", "phishing detection", "secure software development",
+        "authentication", "zero trust security", "ransomware", "ddos attacks", "threat intelligence",
+        "dark web monitoring", "siem", "blockchain security"
+    ],
+    "Distributed Systems": [
+        "cloud computing", "serverless computing", "edge computing", "p2p networks",
+        "5G networks", "blockchain", "distributed ledgers", "fault tolerance", "microservices",
+        "message queues", "container orchestration", "kubernetes", "docker", "event-driven architecture"
+    ]
+}
+
+ANONYMIZE_ENTITIES = ["PERSON", "EMAIL", "ORG"]  # Anonimleştirilecek bilgi türleri
+
+
+def detect_and_blur_faces(image):
+    """Resimdeki yüzleri bulanıklaştırır."""
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # Görüntüyü gri tonlamaya çevir
+    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
+
+    for (x, y, w, h) in faces:
+        face_region = image[y:y+h, x:x+w]
+        blurred_face = cv2.GaussianBlur(face_region, (99, 99), 30)  # Yüzü bulanıklaştır
+        image[y:y+h, x:x+w] = blurred_face  # Bulanık yüzü orijinal görüntüye geri ekle
+
+    return image
+
+
+def extract_images_from_pdf(pdf_path):
+    """PDF içindeki tüm resimleri alır ve yüzleri bulanıklaştırır."""
+    pdf_reader = fitz.open(pdf_path)
+    pdf_writer = fitz.open()
+
+    print(f"📌 PDF {len(pdf_reader)} sayfa içeriyor.")  # Yeni eklenen satır
+
+    for page_num in range(len(pdf_reader)):
+        page = pdf_reader[page_num]
+        img_list = page.get_images(full=True)
+
+        print(f"📌 Sayfa {page_num + 1}: {len(img_list)} resim bulundu.")  # Yeni eklenen satır
+
+        for img_index, img in enumerate(img_list):
+            xref = img[0]
+            base_image = pdf_reader.extract_image(xref)
+            image_bytes = base_image["image"]
+            img = cv2.imdecode(np.frombuffer(image_bytes, np.uint8), cv2.IMREAD_COLOR)
+
+            # Yüzleri bulanıklaştır
+            blurred_image = detect_and_blur_faces(img)
+
+            # Bulanıklaştırılmış görüntüyü PDF'e geri ekle
+            img_stream = fitz.open("png", blurred_image)
+            page.insert_image(page.rect, stream=img_stream.read(), xref=xref)
+
+    if len(pdf_reader) == 0:
+        print("❌ Hata: PDF içinde hiç sayfa bulunamadı!")
+        return pdf_path  # Orijinal dosyayı döndür
+
+    output_pdf_path = pdf_path.replace(".pdf", "_anonim.pdf")
+    pdf_writer.save(output_pdf_path)
+    print(f"✅ Anonimleştirilmiş PDF kaydedildi: {output_pdf_path}")  # Yeni eklenen satır
+    return output_pdf_path
+
+
+def anonymize_text(text):
+    """PDF metninde yazar bilgilerini `*****` ile değiştirir."""
+    doc = nlp(text)
+    new_text = text
+    for ent in doc.ents:
+        if ent.label_ in ANONYMIZE_ENTITIES:
+            new_text = new_text.replace(ent.text, "*****")
+    return new_text
+
+
+def extract_text_from_pdf(pdf_path):
+    """PDF'den metin çıkarır ve anonimleştirir."""
+    pdf_reader = fitz.open(pdf_path)
+    new_pdf = fitz.open()
+
+    for page_num in range(len(pdf_reader)):
+        page = pdf_reader[page_num]
+        text = page.get_text()
+
+        # Belirli bölümlerde anonimleştirme yapma (Giriş, Referanslar vb.)
+        section_titles = ["Introduction", "Related Work", "References", "Acknowledgments"]
+        if any(title in text for title in section_titles):
+            new_text = text  # Bu bölümlerde değişiklik yapma
+        else:
+            new_text = anonymize_text(text)  # Anonimleştir
+
+        # Yeni sayfa oluştur ve anonimleştirilmiş metni ekle
+        new_page = new_pdf.new_page(width=page.rect.width, height=page.rect.height)
+        new_page.insert_text((50, 50), new_text)
+
+    output_pdf_path = pdf_path.replace(".pdf", "_anonim_text.pdf")
+    new_pdf.save(output_pdf_path)
+    return output_pdf_path
+
+
+def extract_keywords(text):
+    """TF-IDF ile en önemli anahtar kelimeleri çıkarır."""
+    vectorizer = TfidfVectorizer(stop_words="english", max_features=20)  # Daha fazla kelime al
+    tfidf_matrix = vectorizer.fit_transform([text])
+    feature_names = vectorizer.get_feature_names_out()
+    return feature_names
+
+
+def assign_category(text):
+    """Makalenin anahtar kelimelerine göre en uygun kategoriyi belirler."""
+    keywords = extract_keywords(text)
+    category_scores = {category: sum(1 for keyword in keywords if keyword in words) for category, words in
+                       CATEGORIES.items()}
+
+    # En fazla eşleşen kategoriyi belirle
+    max_score = max(category_scores.values())
+    assigned_categories = [cat for cat, score in category_scores.items() if score == max_score]
+
+    return assigned_categories
+
+
+def anonymize_pdf(pdf_path):
+    print(f"📌 Başlatılıyor: {pdf_path}")
+    anonymized_text_pdf = extract_text_from_pdf(pdf_path)  # Metin anonimleştirme
+    print("📌 Metin anonimleştirildi.")
+    anonymized_images_pdf = extract_images_from_pdf(anonymized_text_pdf)  # Görselleri anonimleştirme
+    print("📌 Görseller anonimleştirildi.")
+
+    # Anahtar kelimeleri çıkar ve ilgi alanı ata
+    with fitz.open(anonymized_text_pdf) as pdf_reader:
+        full_text = "\n".join([page.get_text() for page in pdf_reader])
+        assigned_categories = assign_category(full_text)
+    print(f"📌 Kategoriler belirlendi: {', '.join(assigned_categories)}")
+
+    return anonymized_images_pdf
+if __name__ == "__main__":
+    import sys
+
+    if len(sys.argv) < 2:
+        print("❌ Hata: PDF dosya yolu belirtilmedi!")
+        sys.exit(1)
+
+    pdf_path = sys.argv[1]
+    print(f"✅ PDF Dosya Yolu: {pdf_path}")
+
+    anonymized_pdf = anonymize_pdf(pdf_path)
+    print(f"🚀 Anonimleştirilmiş PDF oluşturuldu: {anonymized_pdf}")

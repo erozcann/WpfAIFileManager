@@ -1,0 +1,25 @@
+[GELEN YANIT]:
+{
+  "action": "list",
+  "target": "file",
+  "extension": "pdf",
+  "createdBefore": null,
+  "createdAfter": null,
+  "destination": null,
+  "oldName": null,
+  "newName": null,
+  "source": null
+}
+
+[İŞLENMİŞ JSON]:
+{
+  "action": "list",
+  "target": "file",
+  "extension": "pdf",
+  "createdBefore": null,
+  "createdAfter": null,
+  "destination": null,
+  "oldName": null,
+  "newName": null,
+  "source": null
+}

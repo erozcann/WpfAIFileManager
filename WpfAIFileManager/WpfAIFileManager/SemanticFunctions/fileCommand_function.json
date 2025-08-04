@@ -1,0 +1,28 @@
+﻿{
+  "description": "Kullanıcının komutunu dosya yönetimi işlemlerine çevirir",
+  "type": "completion",
+  "completion": {
+    "max_tokens": 500,
+    "temperature": 0.0,
+    "top_p": 0.1
+  },
+  "input": {
+    "parameters": {
+      "input": {
+        "description": "Kullanıcının yazdığı doğal dil komut cümlesi",
+        "type": "string"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "action": { "type": "string" },
+      "target": { "type": "string" },
+      "extension": { "type": "string" },
+      "createdBefore": { "type": "string" },
+      "createdAfter": { "type": "string" },
+      "destination": { "type": "string" }
+    }
+  }
+}

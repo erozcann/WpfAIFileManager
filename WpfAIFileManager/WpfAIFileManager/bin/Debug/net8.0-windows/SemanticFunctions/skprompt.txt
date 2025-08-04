@@ -1,0 +1,17 @@
+﻿Aşağıdaki doğal dil komutunu anlamlı bir dosya yönetim işlemine çevir.
+
+Komut: {{$input}}
+
+Yapılacak işlem formatı:
+{
+  "action": "delete | copy | move | list | rename | extract",
+  "target": "file | folder",
+  "extension": "pdf | txt | png | zip | *",
+  "createdBefore": "YYYY-MM-DD",
+  "createdAfter": "YYYY-MM-DD",
+  "destination": "hedef klasör adı"
+}
+
+YANITI SADECE VE SADECE GEÇERLİ JSON OLARAK VER.
+Başka hiçbir açıklama, yorum, metin, ön söz, gerekçe yazma.
+SADECE geçerli bir JSON objesi gönder. Başka hiçbir şey yazma.

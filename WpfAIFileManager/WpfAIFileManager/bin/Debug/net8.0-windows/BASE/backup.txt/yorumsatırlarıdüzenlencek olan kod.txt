@@ -1,0 +1,621 @@
+/*
+ * Created by ArduinoGetStarted.com
+ *
+ * This example code is in the public domain
+ *
+ * Tutorial page: https://arduinogetstarted.com/tutorials/arduino-oled
+ */
+
+
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define OLED_RESET    -1 
+
+Adafruit_SSD1306 oled(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
+#define ButonYukari   0
+#define ButonAsagi 1
+#define SecimButonu 13
+
+#define Can1 10 
+#define Can2 11   
+#define Can3 12 
+
+int E=2; 
+int D=3; 
+int C=4; 
+int P=5;
+int B=6; 
+int A=7; 
+int F=8; 
+int G=9;
+
+enum OyunDurumlari {
+  MENU,
+  oyunBaslat,
+  GAME_PLAYING,
+  GAME_OVER,
+  GAME_NEXT_LEVEL
+};
+
+//oyunu menüden başlatıyoruz.
+OyunDurumlari oyunDurum = MENU;
+int mevcutSeviye = 1;
+
+int menusecimi = 0; 
+
+// tuğla boyutları
+const int tuglaGenisligi = 12;
+const int tuglaBoyu = 5;
+
+const int tuglasirasi = 2; 
+const int tuglasutun = 5; 
+bool tuglalar[tuglasirasi][tuglasutun];
+
+//topun hız değişkenlerini tanımlıyoruz.
+const int baslangicTopX = 2;  
+const int baslangictopY = -2; 
+
+const int LDR_PIN = A1; //ldr pini
+
+//palet ayarı
+const int paletGenisligi = 30;
+const int paletBoyu = 5;
+
+
+const int potPin = A0; //potansiyometreyi A0 pinine tanımladık 
+
+//paletin başlangıç konumu
+int paletX = (SCREEN_WIDTH - paletGenisligi) / 2;
+
+
+//topun başlangıç pozisyonu ve boyutu
+int topX = SCREEN_WIDTH / 2;
+int topY = SCREEN_HEIGHT / 2;
+int topBoyutu = 4;
+
+//topun hızı
+int topunXhizi = 2;
+int topunYhizi = -2; 
+
+int skor = 0; 
+
+//can tanımlama ve ledlerin pinleri
+int canSayisi = 3; 
+int ledPinleri[] = {10, 11, 12}; 
+
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(LDR_PIN, INPUT); // LDR pinini giriş olarak ayarla
+
+  //ledleri çıkış olarak ayarlar ve başlangıçta yanık başlarlar
+  for (int i = 0; i < 3; i++) {
+    pinMode(ledPinleri[i], OUTPUT);
+    digitalWrite(ledPinleri[i], HIGH); 
+  }
+
+  //oled ekran için gerekli adres işlemleri
+  if (!oled.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    Serial.println(F("SSD1306 allocation failed"));
+    while (true);
+  }
+
+  delay(2000);         
+  oled.clearDisplay(); 
+
+  pinMode(ButonYukari, INPUT_PULLUP);
+  pinMode(ButonAsagi, INPUT_PULLUP);
+  pinMode(SecimButonu, INPUT_PULLUP);
+  
+  if (!oled.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {  
+    Serial.println(F("SSD1306 allocation failed"));
+    for(;;); // Sonsuz döngüye girerek programı durdurur
+  }
+  oled.clearDisplay();
+  oled.setTextSize(1);
+  oled.setTextColor(SSD1306_WHITE);
+  menuguncelle(); //menüyü ilk kez günceller
+
+pinMode(potPin, INPUT); //potansiyometre pinini giriş olarak ayarlar
+
+tuglabaslat(); //tuğlalar başlatılır
+randomSeed(analogRead(0)); //random satı üreitimi başlatır.
+
+pinMode(E, OUTPUT); 
+pinMode(D, OUTPUT); 
+pinMode(C, OUTPUT);
+pinMode(A, OUTPUT); 
+pinMode(B, OUTPUT); 
+pinMode(F, OUTPUT); 
+pinMode(G, OUTPUT); 
+pinMode(P, OUTPUT);
+}
+
+void loop() {
+
+if(!digitalRead(ButonYukari)) {
+    menusecimi = 0;
+    menuguncelle();
+    delay(200); //deboncing
+  }
+  if(!digitalRead(ButonAsagi)) {
+    menusecimi = 1;
+    menuguncelle();
+    delay(200); 
+  }
+  if(!digitalRead(SecimButonu)) {
+    secimegore();
+    delay(200); 
+  }
+
+//menü işlemleri kısmı
+if (oyunDurum == MENU) {
+    
+  } else if (oyunDurum == oyunBaslat) {
+    oyunabasla();
+    oyunDurum = GAME_PLAYING; 
+  } else if (oyunDurum == GAME_PLAYING) {
+     oled.clearDisplay(); // ekranı temizler
+
+    paletinKonumunuGuncelle(); //potansiyometre değerine göre paletin konumunu güncelleyen fonksiyon
+    topunKonumunuGuncelle(); //topun hareketini güncelleyen fonksiyon
+    topPaletCarpKontrol(); //topun paletle çarpışmasını kontrol eden fonksiyon
+    toptuglaCarpKonrol(); //topun tuğlalarla çarpışmasını kontrol eden fonksiyon
+
+    paletCiz(); //palet çizimi
+    topCiz(); //top çizimi
+    tuglaciz(); //tuğla çizimi
+
+   if (tuglalarKirildimi()) {
+    }
+    levelKontrol(); //levelin bitip bitmediğini kontrol eden fonksiyon
+
+    oled.display(); //ekranı günceller
+  } else if (oyunDurum == GAME_OVER) {
+  }
+  butonkontrolu();//buton kontrolü yapılır
+}
+
+
+void butonkontrolu() {
+  
+  if (!digitalRead(ButonYukari)) {
+    if (oyunDurum == MENU) {
+      menusecimi--;
+      if (menusecimi < 0) {
+        menusecimi = 1; //menü seçeneklerinin sayısı -1 ise tekrar en alta al
+      }
+      menuguncelle();
+    }
+    delay(200); //debouncing için gecikme
+  }
+
+  if (!digitalRead(ButonAsagi)) {
+    if (oyunDurum == MENU) {
+      menusecimi++;
+      if (menusecimi > 1) {
+        menusecimi = 0; // Menü seçeneklerinin sayısını aştıysa tekrar en üste al
+      }
+      menuguncelle();
+    }
+    delay(200); 
+  }
+
+  if (!digitalRead(SecimButonu)) {
+    if (oyunDurum == MENU) {
+      secimegore();
+    }
+    delay(200); 
+  }
+}
+
+void menuguncelle() {
+ oled.clearDisplay();
+  oled.setCursor(0,0);
+  if(menusecimi == 0) {
+    oled.println(F("> Baslat"));
+    oled.println(F("  Cikis"));
+  } else {
+    oled.println(F("  Baslat"));
+    oled.println(F("> Cikis"));
+  }
+  oled.display();
+}
+
+
+void secimegore() {
+   if (menusecimi == 0) {
+    // Oyun başlama durumuna geç
+    oyunDurum = oyunBaslat;
+  } else {
+    // Çıkış mesajını göster
+    oled.clearDisplay();
+    oled.setCursor(0,0);
+    oled.println(F("Oyunumuza gösterdiginiz ilgi icin tesekkurler!"));
+    oled.display();
+    delay(2000); // Mesajı bir süre göster
+    oyunDurum = MENU; // Ana menüye dön
+    menuguncelle(); // Menüyü güncelle
+  }
+}
+
+
+
+void tuglaciz() {
+  // Tuğlaları çizmek için benzer bir mantık
+  for (int i = 0; i < tuglasirasi; i++) {
+    for (int j = 0; j < tuglasutun; j++) {
+      if (tuglalar[i][j]) {
+        int x = j * (tuglaGenisligi + 3) + 10; // Tuğla konumu
+        int y = i * (tuglaBoyu + 3) + 10;
+        if (isikModu()) {
+          oled.fillRect(x, y, tuglaGenisligi, tuglaBoyu, SSD1306_BLACK);
+        } else {
+          oled.fillRect(x, y, tuglaGenisligi, tuglaBoyu, SSD1306_WHITE);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+void oyunabasla() {
+   oled.clearDisplay(); // Ekrani temizle
+  tuglaciz(); // Tuğlaları çiz
+  oled.display(); // Ekrana çizilenleri güncelle
+}
+
+
+void paletinKonumunuGuncelle() {
+  int potDegeri = analogRead(potPin); // Potansiyometrenin değerini oku (0 - 1023)
+  paletX = map(potDegeri, 0, 1023, 0, SCREEN_WIDTH - paletGenisligi); // Paletin x konumunu güncelle
+}
+
+void paletCiz() {
+ if (isikModu()) {
+    oled.fillScreen(SSD1306_WHITE); // Arka planı beyaz yap
+    oled.fillRect(paletX, SCREEN_HEIGHT - 10 - paletBoyu, paletGenisligi, paletBoyu, SSD1306_BLACK);
+  } else {
+    oled.fillScreen(SSD1306_BLACK); // Arka planı siyah yap
+    oled.fillRect(paletX, SCREEN_HEIGHT - 10 - paletBoyu, paletGenisligi, paletBoyu, SSD1306_WHITE);
+  }
+}
+
+void topunKonumunuGuncelle() {
+  topX += topunXhizi;
+    topY += topunYhizi;
+    
+    // Ekranın kenarları ile çarpışma
+    if (topX <= 0 || topX >= SCREEN_WIDTH - topBoyutu) {
+        topunXhizi = -topunXhizi; // X yönünde yönü değiştir
+    }
+    if (topY <= 0) {
+        topunYhizi = -topunYhizi; // Y yönünde yönü değiştir
+    }
+    // Top ekranın altına düşerse
+    if (topY >= SCREEN_HEIGHT - topBoyutu) {
+        cankayip(); // Bir can kaybet
+        topSifirla(); // Topu başlangıç konumuna getir
+}
+}
+
+void topCiz() {
+  // Top çizimi için benzer bir mantık uygulanır.
+  if (isikModu()) {
+    oled.fillCircle(topX, topY, topBoyutu, SSD1306_BLACK);
+  } else {
+    oled.fillCircle(topX, topY, topBoyutu, SSD1306_WHITE);
+  }
+}
+
+
+void topPaletCarpKontrol() {
+ // Topun paletin üzerine düşüp düşmediğini kontrol et
+    if (topY + topBoyutu >= SCREEN_HEIGHT - paletBoyu - 10 && topY + topBoyutu <= SCREEN_HEIGHT - 10) {
+        if (topX + topBoyutu > paletX && topX < paletX + paletGenisligi) {
+            topunYhizi = -topunYhizi; // Y yönünde topun hızını ters çevir, hız sabit kalır
+
+            // Topun palet üzerindeki konumuna göre X yönünde hafif bir yön ayarı yapabilirsiniz
+            // Ancak bu, topun hızını değiştirmemeli
+            // Örneğin, paletin merkezine göre topun pozisyonunu hesaplayıp, 
+            // topun yönünü hafifçe değiştirebilirsiniz (isteğe bağlı):
+            int paletMerkezi = paletX + paletGenisligi / 2;
+            int topMerkezi = topX + topBoyutu / 2;
+            topunXhizi = baslangicTopX * (topMerkezi - paletMerkezi) / paletGenisligi * 2;
+            // Yalnızca yönü değiştirirken, topun hızının büyüklüğünü değiştirmeyin
+        }
+    }
+}
+
+void tuglabaslat() {
+  int baslangicSutunu = 0;
+  
+  // Tuğla sayısını seviyeye göre belirle
+  int tuglaSayisi = mevcutSeviye + 1;
+  
+  // Tuğla sayısı sınırlar içinde olsun
+  if (tuglaSayisi > tuglasutun) {
+    tuglaSayisi = tuglasutun;
+  }
+  
+  // Tuğlaları başlangıç sütununa yerleştir
+  baslangicSutunu = (tuglasutun - tuglaSayisi) / 2;
+  
+  // Tuğlaları temizle
+  for (int i = 0; i < tuglasirasi; i++) {
+    for (int j = 0; j < tuglasutun; j++) {
+      tuglalar[i][j] = false;
+    }
+  }
+  
+  // Belirlenen sütunlara tuğla yerleştir
+  for (int j = baslangicSutunu; j < baslangicSutunu + tuglaSayisi; j++) {
+    tuglalar[0][j] = true;
+  }
+}
+
+
+
+
+
+
+void toptuglaCarpKonrol() {
+ for (int i = 0; i < tuglasirasi; i++) {
+    for (int j = 0; j < tuglasutun; j++) {
+      if (tuglalar[i][j]) {
+        int tuglaX = j * (tuglaGenisligi + 3) + 10;
+        int tuglaY = i * (tuglaBoyu + 3) + 10;
+        
+        if (topX + topBoyutu > tuglaX &&
+            topX < tuglaX + tuglaGenisligi &&
+            topY + topBoyutu > tuglaY &&
+            topY < tuglaY + tuglaBoyu) {
+          tuglalar[i][j] = false; // Tuğlayı kır
+          topunYhizi = -topunYhizi; // Yönü değiştir ama hız sabit
+          
+          skor++; // Skoru artır
+          SayiYaz(skor % 10); // Skoru seven segment display üzerinde güncelle
+          
+          Serial.print("SKOR: ");
+          Serial.println(skor); // Skorun tam değerini seri monitöre yazdır
+        }
+      }
+    }
+  }
+}
+
+
+
+void topSifirla() {
+ // Topun X koordinatını ekranın genişliği içinde rastgele bir değere ayarla
+  topX = random(10, SCREEN_WIDTH - 10 - topBoyutu); // Ekranın kenarlarından biraz içeride başlasın
+  topY = SCREEN_HEIGHT / 2 - topBoyutu / 2; // Y koordinatını sabit bir değere ayarla
+  
+  // Her seviyede top hızını %20 artır
+  float artisOrani = pow(1.2, mevcutSeviye - 1); // Her seviyede artış oranını hesapla
+  topunXhizi = baslangicTopX * artisOrani; // X yönündeki hızı ayarla
+  topunYhizi = baslangictopY * artisOrani; // Y yönündeki hızı ayarla
+}
+
+bool tuglalarKirildimi() {
+  int kalanTuglaSayisi = 0; // Kırılmamış tuğla sayısını takip etmek için bir sayaç
+
+  for (int i = 0; i < tuglasirasi; i++) {
+    for (int j = 0; j < tuglasutun; j++) {
+      if (tuglalar[i][j]) {
+        kalanTuglaSayisi++; // Kırılmamış tuğla bulunduğunda sayaç artırılır
+      }
+    }
+  }
+
+  if (kalanTuglaSayisi > 0) {
+    return false; // Eğer hala kırılmamış bir tuğla varsa, false döndür
+  } else {
+    return true; // Tüm tuğlalar kırıldıysa, true döndür
+  }
+}
+
+
+
+// void levelKontrol() {
+//  if (tuglalarKirildimi()) {
+//     delay(5000); // 5 saniye bekle
+//     mevcutSeviye++; // Bir sonraki seviyeye geç
+
+//     // Her seviye geçişinde top hızını %20 artır
+//     topunXhizi = topunXhizi * 1.2;
+//     topunYhizi = topunYhizi * 1.2;
+
+//     if (mevcutSeviye > 4) {
+//       // Eğer seviye 4'ten büyükse, oyunu bitir
+//       oyunDurum = GAME_OVER;
+//     } else {
+//       oyunDurum = GAME_NEXT_LEVEL;
+//       tuglabaslat(); // Yeni seviye tuğlalarını başlat
+//       topSifirla(); // Topu sıfırla ve başlangıç pozisyonuna getir
+//       oyunDurum = GAME_PLAYING;
+//     }
+//   }
+// }
+
+void levelKontrol() {
+    if (tuglalarKirildimi()) {
+        delay(5000); // 5 saniye bekle
+        mevcutSeviye++; // Bir sonraki seviyeye geç
+
+        if (mevcutSeviye > 4) {
+            // Eğer seviye 4'ten büyükse, oyunu bitir
+            oyunDurum = GAME_OVER;
+        } else {
+            oyunDurum = GAME_NEXT_LEVEL;
+            tuglabaslat(); // Yeni seviye tuğlalarını başlat
+            topSifirla(); // Topu sıfırla ve başlangıç pozisyonuna getir
+            guncelleTopHizi(); // Top hızını güncelle
+            oyunDurum = GAME_PLAYING;
+        }
+    }
+}
+
+
+void guncelleTopHizi() {
+    float artisOrani = 1.2; // Her seviyede hızın artış oranı %20
+    topunXhizi *= artisOrani;
+    topunYhizi *= artisOrani;
+}
+
+
+
+void SayiYaz(int sayi){
+switch(sayi)
+{
+case 0 :
+digitalWrite(E,LOW);
+digitalWrite(D,LOW); 
+digitalWrite(C,LOW); 
+digitalWrite(B,LOW); 
+digitalWrite(A,LOW); 
+digitalWrite(F,LOW); 
+digitalWrite(G,HIGH); 
+break;
+case 1:
+digitalWrite(E,HIGH);
+digitalWrite(D,HIGH); 
+digitalWrite(C,LOW); 
+digitalWrite(B,LOW); 
+digitalWrite(A,HIGH); 
+digitalWrite(F,HIGH); 
+digitalWrite(G,HIGH); 
+break;
+case 2:
+digitalWrite(E,LOW);
+digitalWrite(D,LOW); 
+digitalWrite(C,HIGH); 
+digitalWrite(B,LOW); 
+digitalWrite(A,LOW); 
+digitalWrite(F,HIGH); 
+digitalWrite(G,LOW); 
+break;
+case 3:
+digitalWrite(E,HIGH);
+digitalWrite(D,LOW); 
+digitalWrite(C,LOW); 
+digitalWrite(B,LOW); 
+digitalWrite(A,LOW); 
+digitalWrite(F,HIGH); 
+digitalWrite(G,LOW); 
+break;
+case 4:
+digitalWrite(E,HIGH);
+digitalWrite(D,HIGH); 
+digitalWrite(C,LOW); 
+digitalWrite(B,LOW); 
+digitalWrite(A,HIGH); 
+digitalWrite(F,LOW); 
+digitalWrite(G,LOW); 
+break;
+case 5:
+digitalWrite(E,HIGH);
+digitalWrite(D,LOW); 
+digitalWrite(C,LOW); 
+digitalWrite(B,HIGH); 
+digitalWrite(A,LOW); 
+digitalWrite(F,LOW); 
+digitalWrite(G,LOW); 
+break;
+case 6:
+digitalWrite(E,LOW);
+digitalWrite(D,LOW); 
+digitalWrite(C,LOW); 
+digitalWrite(B,HIGH); 
+digitalWrite(A,LOW); 
+digitalWrite(F,LOW); 
+digitalWrite(G,LOW); 
+break;
+case 7:
+digitalWrite(E,HIGH);
+digitalWrite(D,HIGH); 
+digitalWrite(C,LOW); 
+digitalWrite(B,LOW); 
+digitalWrite(A,LOW); 
+digitalWrite(F,HIGH); 
+digitalWrite(G,HIGH); 
+break;
+case 8:
+digitalWrite(E,LOW);
+digitalWrite(D,LOW); 
+digitalWrite(C,LOW); 
+digitalWrite(B,LOW); 
+digitalWrite(A,LOW); 
+digitalWrite(F,LOW); 
+digitalWrite(G,LOW); 
+break;
+case 9:
+digitalWrite(E,HIGH);
+digitalWrite(D,LOW); 
+digitalWrite(C,LOW); 
+digitalWrite(B,LOW); 
+digitalWrite(A,LOW); 
+digitalWrite(F,LOW); 
+digitalWrite(G,LOW);
+break;
+}
+}
+
+
+bool isikModu() {
+  int ldrDegeri = analogRead(LDR_PIN); // LDR'den değer oku
+  
+  return ldrDegeri > 512; // Eğer analog değer > 512 ise ışık modu varsayalım
+}
+
+
+void renkModu() {
+  // Işık moduna göre arka planı ve metin rengini ayarla
+  if (isikModu()) {
+    oled.clearDisplay(); // Arka planı temizle
+    oled.setTextColor(SSD1306_BLACK, SSD1306_WHITE); // Metin rengini siyah yap
+  } else {
+    oled.clearDisplay(); // Arka planı temizle
+    oled.setTextColor(SSD1306_WHITE, SSD1306_BLACK); // Metin rengini beyaz yap
+  }
+}
+
+
+void cankayip() {
+    if (canSayisi > 0) {
+        canSayisi--; // Canı azalt
+        digitalWrite(ledPinleri[canSayisi], LOW); // İlgili LED'i söndür
+
+        // Can kalmadıysa oyun bitirme kodları buraya
+        if (canSayisi == 0) {
+            oyunBitir(); // Oyunu bitir
+        }
+    }
+}
+
+void oyunBitir() {
+  // Skoru OLED ekranında göster
+    oled.clearDisplay(); // Ekranı temizle
+    oled.setTextSize(1); // Metin boyutunu ayarla
+    oled.setTextColor(SSD1306_WHITE); // Metin rengini beyaz yap
+    oled.setCursor(0,0); // Başlangıç pozisyonunu ayarla
+    oled.print(F("OYUN BITTI !! \nSKORUNUZ: ")); // Oyun bitiş mesajı
+    oled.print(skor); // Skoru yazdır
+    oled.display(); // Ekranı güncelle
+
+    delay(5000); // 5 saniye bekle
+
+    // Ana menüye dönme işlemleri
+    oyunDurum = MENU; // Oyun durumunu ana menüye ayarla
+    menuguncelle(); // Ana menüyü güncelle
+
+    delay(30000);
+}
+
