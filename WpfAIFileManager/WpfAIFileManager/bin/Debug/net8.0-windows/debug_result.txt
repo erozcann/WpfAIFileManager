@@ -1,25 +1,137 @@
-[GELEN YANIT]:
-{
-  "action": "list",
-  "target": "file",
-  "extension": "pdf",
-  "createdBefore": null,
-  "createdAfter": null,
-  "destination": null,
-  "oldName": null,
-  "newName": null,
-  "source": null
-}
+GENEL HATA:
+System.AggregateException: Retry failed after 4 tries. (Bilinen böyle bir ana bilgisayar yok. (openrouter.ai:443)) (Bilinen böyle bir ana bilgisayar yok. (openrouter.ai:443)) (Bilinen böyle bir ana bilgisayar yok. (openrouter.ai:443)) (Bilinen böyle bir ana bilgisayar yok. (openrouter.ai:443))
+ ---> System.ClientModel.ClientResultException: Bilinen böyle bir ana bilgisayar yok. (openrouter.ai:443)
+ ---> System.Net.Http.HttpRequestException: Bilinen böyle bir ana bilgisayar yok. (openrouter.ai:443)
+ ---> System.Net.Sockets.SocketException (11001): Bilinen böyle bir ana bilgisayar yok.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at System.ClientModel.Primitives.HttpClientPipelineTransport.ProcessSyncOrAsync(PipelineMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at System.ClientModel.Primitives.HttpClientPipelineTransport.ProcessSyncOrAsync(PipelineMessage message, Boolean async)
+   at System.ClientModel.Primitives.HttpClientPipelineTransport.ProcessCoreAsync(PipelineMessage message)
+   at System.ClientModel.Primitives.PipelineTransport.ProcessSyncOrAsync(PipelineMessage message, Boolean async)
+   at System.ClientModel.Primitives.PipelineTransport.ProcessAsync(PipelineMessage message)
+   at System.ClientModel.Primitives.PipelineTransport.ProcessAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.PipelinePolicy.ProcessNextAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.MessageLoggingPolicy.ProcessSyncOrAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex, Boolean async)
+   at System.ClientModel.Primitives.MessageLoggingPolicy.ProcessAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.PipelinePolicy.ProcessNextAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.ApiKeyAuthenticationPolicy.ProcessAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.PipelinePolicy.ProcessNextAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.ClientRetryPolicy.ProcessSyncOrAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex, Boolean async)
+   --- End of inner exception stack trace ---
+   at System.ClientModel.Primitives.ClientRetryPolicy.ProcessSyncOrAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex, Boolean async)
+   at System.ClientModel.Primitives.ClientRetryPolicy.ProcessAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at GenericActionPipelinePolicy.ProcessAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at OpenAI.GenericActionPipelinePolicy.ProcessAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.ClientPipeline.SendAsync(PipelineMessage message)
+   at OpenAI.ClientPipelineExtensions.ProcessMessageAsync(ClientPipeline pipeline, PipelineMessage message, RequestOptions options)
+   at OpenAI.Chat.ChatClient.CompleteChatAsync(BinaryContent content, RequestOptions options)
+   at OpenAI.Chat.ChatClient.CompleteChatAsync(IEnumerable`1 messages, ChatCompletionOptions options, CancellationToken cancellationToken)
+   at Microsoft.SemanticKernel.Connectors.OpenAI.ClientCore.RunRequestAsync[T](Func`1 request)
+   at Microsoft.SemanticKernel.Connectors.OpenAI.ClientCore.GetChatMessageContentsAsync(String targetModel, ChatHistory chatHistory, PromptExecutionSettings executionSettings, Kernel kernel, CancellationToken cancellationToken)
+   at Microsoft.SemanticKernel.ChatCompletion.ChatCompletionServiceExtensions.GetChatMessageContentAsync(IChatCompletionService chatCompletionService, ChatHistory chatHistory, PromptExecutionSettings executionSettings, Kernel kernel, CancellationToken cancellationToken)
+   at WpfAIFileManager.Protocol.SemanticProcessor.ProcessAsync(String input) in C:\Users\Admin\source\repos\WpfAIFileManager\WpfAIFileManager\Protocol\SemanticProcessor.cs:line 86
+ ---> (Inner Exception #1) System.ClientModel.ClientResultException: Bilinen böyle bir ana bilgisayar yok. (openrouter.ai:443)
+ ---> System.Net.Http.HttpRequestException: Bilinen böyle bir ana bilgisayar yok. (openrouter.ai:443)
+ ---> System.Net.Sockets.SocketException (11001): Bilinen böyle bir ana bilgisayar yok.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at System.ClientModel.Primitives.HttpClientPipelineTransport.ProcessSyncOrAsync(PipelineMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at System.ClientModel.Primitives.HttpClientPipelineTransport.ProcessSyncOrAsync(PipelineMessage message, Boolean async)
+   at System.ClientModel.Primitives.HttpClientPipelineTransport.ProcessCoreAsync(PipelineMessage message)
+   at System.ClientModel.Primitives.PipelineTransport.ProcessSyncOrAsync(PipelineMessage message, Boolean async)
+   at System.ClientModel.Primitives.PipelineTransport.ProcessAsync(PipelineMessage message)
+   at System.ClientModel.Primitives.PipelineTransport.ProcessAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.PipelinePolicy.ProcessNextAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.MessageLoggingPolicy.ProcessSyncOrAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex, Boolean async)
+   at System.ClientModel.Primitives.MessageLoggingPolicy.ProcessAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.PipelinePolicy.ProcessNextAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.ApiKeyAuthenticationPolicy.ProcessAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.PipelinePolicy.ProcessNextAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.ClientRetryPolicy.ProcessSyncOrAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex, Boolean async)<---
 
-[İŞLENMİŞ JSON]:
-{
-  "action": "list",
-  "target": "file",
-  "extension": "pdf",
-  "createdBefore": null,
-  "createdAfter": null,
-  "destination": null,
-  "oldName": null,
-  "newName": null,
-  "source": null
-}
+ ---> (Inner Exception #2) System.ClientModel.ClientResultException: Bilinen böyle bir ana bilgisayar yok. (openrouter.ai:443)
+ ---> System.Net.Http.HttpRequestException: Bilinen böyle bir ana bilgisayar yok. (openrouter.ai:443)
+ ---> System.Net.Sockets.SocketException (11001): Bilinen böyle bir ana bilgisayar yok.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at System.ClientModel.Primitives.HttpClientPipelineTransport.ProcessSyncOrAsync(PipelineMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at System.ClientModel.Primitives.HttpClientPipelineTransport.ProcessSyncOrAsync(PipelineMessage message, Boolean async)
+   at System.ClientModel.Primitives.HttpClientPipelineTransport.ProcessCoreAsync(PipelineMessage message)
+   at System.ClientModel.Primitives.PipelineTransport.ProcessSyncOrAsync(PipelineMessage message, Boolean async)
+   at System.ClientModel.Primitives.PipelineTransport.ProcessAsync(PipelineMessage message)
+   at System.ClientModel.Primitives.PipelineTransport.ProcessAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.PipelinePolicy.ProcessNextAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.MessageLoggingPolicy.ProcessSyncOrAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex, Boolean async)
+   at System.ClientModel.Primitives.MessageLoggingPolicy.ProcessAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.PipelinePolicy.ProcessNextAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.ApiKeyAuthenticationPolicy.ProcessAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.PipelinePolicy.ProcessNextAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.ClientRetryPolicy.ProcessSyncOrAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex, Boolean async)<---
+
+ ---> (Inner Exception #3) System.ClientModel.ClientResultException: Bilinen böyle bir ana bilgisayar yok. (openrouter.ai:443)
+ ---> System.Net.Http.HttpRequestException: Bilinen böyle bir ana bilgisayar yok. (openrouter.ai:443)
+ ---> System.Net.Sockets.SocketException (11001): Bilinen böyle bir ana bilgisayar yok.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at System.ClientModel.Primitives.HttpClientPipelineTransport.ProcessSyncOrAsync(PipelineMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at System.ClientModel.Primitives.HttpClientPipelineTransport.ProcessSyncOrAsync(PipelineMessage message, Boolean async)
+   at System.ClientModel.Primitives.HttpClientPipelineTransport.ProcessCoreAsync(PipelineMessage message)
+   at System.ClientModel.Primitives.PipelineTransport.ProcessSyncOrAsync(PipelineMessage message, Boolean async)
+   at System.ClientModel.Primitives.PipelineTransport.ProcessAsync(PipelineMessage message)
+   at System.ClientModel.Primitives.PipelineTransport.ProcessAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.PipelinePolicy.ProcessNextAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.MessageLoggingPolicy.ProcessSyncOrAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex, Boolean async)
+   at System.ClientModel.Primitives.MessageLoggingPolicy.ProcessAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.PipelinePolicy.ProcessNextAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.ApiKeyAuthenticationPolicy.ProcessAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.PipelinePolicy.ProcessNextAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex)
+   at System.ClientModel.Primitives.ClientRetryPolicy.ProcessSyncOrAsync(PipelineMessage message, IReadOnlyList`1 pipeline, Int32 currentIndex, Boolean async)<---

@@ -16,7 +16,7 @@ namespace WpfAIFileManager.Protocol
 {
     public class SemanticProcessor
     {
-        private const string ApiKey = "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";
+        private const string ApiKey = "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";
         private const string Model = "gryphe/mythomax-l2-13b";
         private const string Endpoint = "https://openrouter.ai/api/v1";
 
